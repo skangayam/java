@@ -1,0 +1,20 @@
+package com.cloudwick.mapreduce.join.innerjoin;
+
+import java.io.IOException;
+
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+import com.cloudwick.mapreduce.customtype.TextPair;
+
+public class DeptMapper extends Mapper<LongWritable, Text, TextPair, Text> {
+
+	protected void map(LongWritable offset, Text record, Context context)
+			throws IOException, InterruptedException {
+		String[] row = record.toString().split(",");
+		context.write(new TextPair(row[0],"0"), record );
+
+	}
+
+}
