@@ -1,0 +1,21 @@
+package com.cloudwick.io;
+
+public class InvalidFundException extends Exception {
+	
+	private String userName;
+	
+	public InvalidFundException(String message)
+	{
+		super(message);		
+	}
+	
+	public String getUserName()
+	{
+		return userName;		
+	}
+	
+	public void setUserName(String userName)
+	{
+		this.userName = userName;
+	}
+}
