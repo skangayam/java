@@ -9,6 +9,7 @@ import org.apache.hadoop.io.WritableComparable;
 
 public class TextPair implements WritableComparable<TextPair> {
 
+	//variable
 	private Text first;
 	private Text second;
 
