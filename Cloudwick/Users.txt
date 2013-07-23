@@ -1,0 +1,5 @@
+1,O Ren Ishi,Fremont,CA,24
+2,Bill,San Jose,CA,30
+3,James,Santa Clara,CA,34
+4,Uma,Union City,CA,31
+5,Lily,Fremont,CA,28
