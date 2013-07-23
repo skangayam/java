@@ -6,7 +6,8 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import com.cloudwick.mapreduce.customtype.TextPair;
 
-public class InnerJoinReducer extends Reducer<Text, Text, NullWritable, Text> {
+public class InnerJoinReducer extends
+		Reducer<TextPair, Text, NullWritable, Text> {
 
 	protected void reduce(TextPair compositeKey, Iterable<Text> rows,
 			Context context) throws IOException, InterruptedException {
@@ -16,7 +17,7 @@ public class InnerJoinReducer extends Reducer<Text, Text, NullWritable, Text> {
 
 		for (Text row : rows) {
 			if (!set) {
-				deptName = row.toString().split(",")[1];
+				deptName = row.toString().split(",")[0];
 				set = true;
 			} else {
 				String[] record = row.toString().split(",");
