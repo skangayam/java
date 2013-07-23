@@ -74,9 +74,9 @@ public class TextPair implements WritableComparable<TextPair> {
 
 	public int compareTo(TextPair tp, int index) {
 		if (index == 1) {
-			return first.compareTo(tp.first);
+			return this.first.compareTo(tp.first);
 		} else {
-			return second.compareTo(tp.second);
+			return this.second.compareTo(tp.second);
 		}
 
 	}

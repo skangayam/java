@@ -14,7 +14,7 @@ public class EmpMapper extends Mapper<LongWritable, Text, TextPair, Text> {
 		String[] row = record.toString().split(",");
 		if (!row[7].isEmpty()) {
 
-			context.write(new TextPair(row[7],"1"), record);
+			context.write(new TextPair(row[7],"1"), new Text(row[0] +","+ row[1]));
 		}
 
 	}
